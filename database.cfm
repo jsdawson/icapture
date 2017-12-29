@@ -34,11 +34,47 @@
         )
     </cfquery>
 
+    <cfquery name="dbInsert" datasource="#datasource#">
+      INSERT INTO
+        movies (
+          id,
+          adult,
+          backdrop_path,
+          genre_ids,
+          original_language,
+          original_title,
+          overview,
+          popularity,
+          poster_path,
+          release_date,
+          title,
+          video,
+          vote_average,
+          vote_count
+        )
+      VALUES (
+        101,
+        'adult',
+        'backdrop_path',
+        'genre_ids',
+        'original_language',
+        'original_title',
+        'overview',
+        10,
+        'poster_path',
+        CURRENT_DATE(),
+        'title',
+        'video',
+        20,
+        30
+      );
+    </cfquery>
+
     <cfquery name="dbVerify" datasource="#datasource#">
       SELECT
-        table_name
+        *
       FROM
-        information_schema.tables;
+        movies;
     </cfquery>
 
     <cfdump var="#dbVerify#">
