@@ -22,6 +22,8 @@
       result="apiResult">
     </cfhttp>
 
-    <cfdump var="#apiResult#">
+    <cfset json = DeserializeJSON(apiResult.filecontent)>
+
+    <cfdump var="#json#">
   </body>
 </html>
