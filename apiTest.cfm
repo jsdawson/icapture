@@ -14,7 +14,8 @@
   </head>
   <body>
 
-    <cfset apiTestUrl = apiBaseUrl & "/3/movie/550" & apiKey>
+    <cfset page = 2>
+    <cfset apiTestUrl = apiBaseUrl & "/3/discover/movie" & apiKey & "&language=en-US&sort_by=popularity.desc&certification=R&include_adult=false&include_video=false&page=" & page & "&primary_release_year=2015&with_genres=878">
 
     <cfhttp
       url="#apiTestUrl#"
