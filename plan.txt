@@ -1,0 +1,13 @@
+Configure/verify the environment
+Web server FTP/HTTP
+Database
+ColdFusion data source
+Create/share Git repo
+Get API access, research the details, and test manually
+Template/scaffold the pages
+Develop, validate, and test /gather.cfm
+Verify the data in the database
+Develop, validate, and test /display.cfm
+Add pagination and column sorting to /display.cfm
+Add modal detail display to /display.cfm
+Style both pages
