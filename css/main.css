@@ -15,7 +15,7 @@ h1, h2, h3 {
 }
 
 .content-inside {
-  padding: 20px;
+  padding: 40px;
   padding-bottom: 50px;
 }
 
@@ -42,4 +42,19 @@ table#movies {
     table#movies td[data-col="vote_count"] { 
       text-align: right;
     }
+
+.modal-dialog {
+  background: #fff;
+}
+  .modal-dialog .modal-body {
+    float: left;
+  }
+  .modal-dialog .modal-body .left-col {
+    float: left;
+    width: 25%;
+  }
+  .modal-dialog .modal-body .right-col {
+    float: left;
+    width: 75%;
+  }
 

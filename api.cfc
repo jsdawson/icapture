@@ -28,7 +28,7 @@
     <cfquery name="movieList" datasource="candidate_dawsonj">
       SELECT
         id,
-        original_title,
+        title,
         DATE_FORMAT(release_date, '%b %d %Y'),
         vote_count
       FROM
@@ -57,7 +57,20 @@
 
     <cfquery name="movie" datasource="candidate_dawsonj">
       SELECT
-        *
+        id,
+        adult,
+        backdrop_path,
+        genre_ids,
+        original_language,
+        original_title,
+        overview,
+        popularity,
+        poster_path,
+        DATE_FORMAT(release_date, '%b %d %Y'),
+        title,
+        video,
+        vote_average,
+        vote_count
       FROM
         movies
       WHERE
