@@ -1,8 +1,9 @@
 // ================================================================================================
 // Movie Module
 // ================================================================================================
+var movieApp = movieApp || (function(window, $) {
 
-var movieApp = movieApp || (function(window, $) {  
+  'use strict';
 
   // ----------------------------------------------------------------------------------------------
   //   Private Members
@@ -98,8 +99,6 @@ var movieApp = movieApp || (function(window, $) {
   }
 
   function _getMovies(page, sortCol, sortOrder) {
-    var result;
-
     $.ajax({
       url : _apiBaseUrl,
       type: 'get',
@@ -121,8 +120,6 @@ var movieApp = movieApp || (function(window, $) {
   }
 
   function _getMovie(id) {
-    var result;
-
     $.ajax({
       url : _apiBaseUrl,
       type: 'get',
@@ -142,8 +139,6 @@ var movieApp = movieApp || (function(window, $) {
   }
 
   function _getRowCount() {
-    var result;
-
     $.ajax({
       url : _apiBaseUrl,
       type: 'get',
@@ -222,12 +217,12 @@ var movieApp = movieApp || (function(window, $) {
     _getRowCount();
     _getMovies(_currentPage, _sortCol, _sortOrder);
     _updateSortHeaders();
-  }
+  };
 
   // ----------------------------------------------------------------------------------------------
   //   Public Interface
   // ----------------------------------------------------------------------------------------------
   return {
     init : init
-  }
+  };
 })(window, jQuery);
