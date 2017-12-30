@@ -14,7 +14,7 @@
   <cffunction name="getMovies" access="remote" returnType="string" returnFormat="json" output="false">
 
     <cfargument name="page" type="numeric" required="false" default="1" />
-    <cfargument name="sortCol" type="string" required="false" default="release_date" />
+    <cfargument name="sortCol" type="string" required="false" default="vote_count" />
     <cfargument name="sort" type="string" required="false" default="desc" />
 
     <cfset pageSize = 20>
@@ -29,7 +29,7 @@
       SELECT
         id,
         original_title,
-        release_date,
+        DATE_FORMAT(release_date, '%b %d %Y'),
         vote_count
       FROM
         movies

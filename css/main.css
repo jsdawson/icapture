@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
+}
+
+.content {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin: 0 auto -50px;
+  min-height: 100%;
+}
+
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+body > footer {
+  height: 50px;
+  margin-top: -50px;
+  text-align: center;
+}
+
+table#movies {
+  width: 50%;
+}
+  table#movies th {
+    font-size: 1.6rem;
+  }
+    table#movies th:nth-child(1) {
+      width: 70%;
+    }
+    table#movies th:nth-child(2),
+    table#movies th:nth-child(3) {
+      width: 15%;
+    }
+    table#movies th:nth-child(3),
+    table#movies td[data-col="vote_count"] { 
+      text-align: right;
+    }
+

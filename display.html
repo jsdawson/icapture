@@ -4,15 +4,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="iCapture Movie Database">
-    <meta name="author" content="SitePoint">
+    <meta name="author" content="John Dawson">
+
     <title>iCapture - JDawson</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
-    
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -20,6 +24,40 @@
     <script src="js/main.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <div class="content">
+
+      <div class="content-inside">
+
+        <header>
+          <h1>My Movie Database</h1>
+        </header>
+
+        <div class="table-container">
+
+          <table id="movies">
+            <thead>
+              <tr>
+                <th><a href="#" data-col="original_title">Title</a></th>
+                <th><a href="#" data-col="release_date">Release Date</a></th>
+                <th><a href="#" data-col="vote_count">Votes</a></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+    <footer>
+
+      <small>Copyright &copy; <time datetime="2017">2017</time></small>
+
+    </footer>
   </body>
 </html>
