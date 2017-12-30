@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="The HTML5 Herald">
+    <meta name="description" content="iCapture Movie Database">
     <meta name="author" content="SitePoint">
     <title>iCapture - JDawson</title>
     <link rel="stylesheet" href="css/main.css">
