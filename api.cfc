@@ -20,7 +20,7 @@
     <cfset pageSize = 20>
 
     <cfif page GT 1>
-      <cfset pageOffset = page * pageSize>
+      <cfset pageOffset = (page - 1) * pageSize>
     <cfelse>
       <cfset pageOffset = 0>
     </cfif>
@@ -78,6 +78,25 @@
     </cfquery>
 
     <cfreturn serializeJSON(movie) />
+
+  </cffunction>
+
+  <!--- -------------------------------------------------------------------------------------------
+    Returns the movie row count
+
+    Example invocation:
+    http://candidate-test.icapture.com/dawsonj/api.cfc?method=getRowCount
+  ------------------------------------------------------------------------------------------- --->
+  <cffunction name="getRowCount" access="remote" returnType="string" returnFormat="json" output="false">
+
+    <cfquery name="rows" datasource="candidate_dawsonj">
+      SELECT
+        COUNT(`id`) AS `total_rows`
+      FROM
+        movies
+    </cfquery>
+
+    <cfreturn serializeJSON(rows) />
 
   </cffunction>
 

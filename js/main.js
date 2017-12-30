@@ -2,6 +2,6 @@
 // Main Movie Site JS
 // ================================================================================================
 
-$( document ).ready(function() {
+$(document).ready(function() {
   movieApp.init();
 });

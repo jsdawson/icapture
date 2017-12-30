@@ -10,6 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
@@ -34,12 +35,12 @@
 
         <div class="table-container">
 
-          <table id="movies">
-            <thead>
+          <table id="movies" class="table table-bordered table-striped">
+            <thead class="thead-inverse">
               <tr>
-                <th><a href="#" data-col="title">Title</a></th>
-                <th><a href="#" data-col="release_date">Release Date</a></th>
-                <th><a href="#" data-col="vote_count">Votes</a></th>
+                <th><a href="#" data-col="title">Title</a> <i class="fa fa-fw fa-sort"></i></th>
+                <th><a href="#" data-col="release_date">Release Date</a> <i class="fa fa-fw fa-sort"></i></th>
+                <th><a href="#" data-col="vote_count">Votes</a> <i class="fa fa-fw fa-sort"></i></th>
               </tr>
             </thead>
             <tbody>
@@ -51,6 +52,7 @@
 
         </div>
 
+        <div id="pagination"></div>
       </div>
 
     </div>

@@ -8,6 +8,7 @@ var movieApp = movieApp || (function(window, $) {
   //   Private Members
   // ----------------------------------------------------------------------------------------------
   var _apiBaseUrl = 'http://candidate-test.icapture.com/dawsonj/api.cfc';
+  var _currentPage = 1;
   var _sortCol = 'vote_count';
   var _sortOrder = 'DESC';
 
@@ -24,7 +25,6 @@ var movieApp = movieApp || (function(window, $) {
 
   var _movieModalTemplate = ' \
     <% _.each(movie, function(columns, key, list) { %> \
-      <% console.log(movie); %> \
       <div id="movie-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"> \
         <div class="modal-dialog modal-lg"> \
           <div class="modal-header"> \
@@ -54,12 +54,28 @@ var movieApp = movieApp || (function(window, $) {
       </div> \
     <% }); %>';
 
+    var _paginationTemplate = ' \
+    <strong>Page:</strong> \
+    <% _.each(rowCount, function(columns, key, list) { %> \
+      <ul> \
+        <% var rowsPerPage = 20; %> \
+        <% var totalRows = columns[0]; %> \
+        <% var page = 1; %> \
+        <% for (var x = 0;  x < totalRows; x += rowsPerPage) { %> \
+            <li><a href="#" data-page="<%= page %>"><%= page %></a></li> \
+            <% page++; %> \
+        <% } %> \
+      </ul> \
+    <% }); %>';
+
   function _bindEvents() {
     $('thead').on('click', 'th a', function() {
       var $link = $(this);
       var column = $link.data('col');
 
       _sortTable(column);
+
+      _updateSortHeaders();
     });
 
     $('tbody').on('click', 'td a', function() {
@@ -67,6 +83,17 @@ var movieApp = movieApp || (function(window, $) {
       var id = $link.data('id');
 
       _getMovie(id);
+    });
+
+    $('#pagination').on('click', 'a', function() {
+      var $link = $(this);
+      var page = $link.data('page');
+
+      _currentPage = page;
+
+      _getMovies(_currentPage, _sortCol, _sortOrder);
+
+      _updatePagination();
     });
   }
 
@@ -114,6 +141,26 @@ var movieApp = movieApp || (function(window, $) {
     });
   }
 
+  function _getRowCount() {
+    var result;
+
+    $.ajax({
+      url : _apiBaseUrl,
+      type: 'get',
+      data: { 
+        method : 'getRowCount'
+      },
+      success: function(data, status) {
+        var rowCount = JSON.parse(data);
+
+        _showPagination(rowCount.DATA);
+      },
+      error: function(xhr, err) {
+        console.log('Error in _getRowCount: ' + err);
+      }
+    });
+  }
+
   function _populateTable(movies, $target) { 
     $target.html(_.template(_movieListTemplate, {variable: 'movies'})(movies));
   }
@@ -132,11 +179,10 @@ var movieApp = movieApp || (function(window, $) {
 
     _sortCol = sortCol;
 
-    _getMovies(1, _sortCol, _sortOrder);
+    _getMovies(_currentPage, _sortCol, _sortOrder);
   }
 
   function _showMovieModal(movie) {
-    console.log(movie);
     var html = _.template(_movieModalTemplate, {variable: 'movie'})(movie);
 
     $('#movie-modal').remove();
@@ -146,12 +192,36 @@ var movieApp = movieApp || (function(window, $) {
     $('#movie-modal').modal('show'); 
   }
 
+  function _showPagination(rowCount) {
+    var html = _.template(_paginationTemplate, {variable: 'rowCount'})(rowCount);
+
+    $('#pagination').html('');
+
+    $(html).appendTo('#pagination');
+
+    _updatePagination();
+  }
+
+  function _updatePagination() {
+    $('#pagination a').removeClass('active');
+    $('#pagination li a[data-page="' + _currentPage + '"]').addClass('active');
+  }
+
+  function _updateSortHeaders() {
+    var sortClass = 'fa-sort-' + _sortOrder.toLowerCase();
+
+    $('#movies thead i.fa-sort').removeClass('fa-sort-asc fa-sort-desc');
+    $('#movies thead a[data-col="' + _sortCol + '"]').next('i.fa-sort').addClass(sortClass);
+  }
+
   // ----------------------------------------------------------------------------------------------
   //   Public Members
   // ----------------------------------------------------------------------------------------------
   var init = function() {
     _bindEvents();
-    _getMovies(1, _sortCol, _sortOrder);
+    _getRowCount();
+    _getMovies(_currentPage, _sortCol, _sortOrder);
+    _updateSortHeaders();
   }
 
   // ----------------------------------------------------------------------------------------------
