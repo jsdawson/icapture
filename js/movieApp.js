@@ -69,8 +69,8 @@ var movieApp = movieApp || (function(window, $) {
         <% var totalRows = columns[0]; %> \
         <% var page = 1; %> \
         <% for (var x = 0;  x < totalRows; x += rowsPerPage) { %> \
-            <li><a href="#" data-page="<%= page %>"><%= page %></a></li> \
-            <% page++; %> \
+          <li><a href="#" data-page="<%= page %>"><%= page %></a></li> \
+          <% page++; %> \
         <% } %> \
       </ul> \
     <% }); %>';
@@ -205,6 +205,7 @@ var movieApp = movieApp || (function(window, $) {
 
   function _updatePagination() {
     $('#pagination a').removeClass('active');
+
     $('#pagination li a[data-page="' + _currentPage + '"]').addClass('active');
   }
 
@@ -212,6 +213,7 @@ var movieApp = movieApp || (function(window, $) {
     var sortClass = 'fa-sort-' + _sortOrder.toLowerCase();
 
     $('#movies thead i.fa-sort').removeClass('fa-sort-asc fa-sort-desc');
+    
     $('#movies thead a[data-col="' + _sortCol + '"]').next('i.fa-sort').addClass(sortClass);
   }
 

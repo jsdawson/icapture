@@ -8,6 +8,7 @@
 
     <title>iCapture - JDawson</title>
     
+    <link rel="icon" type="image/png" href="http://candidate-test.icapture.com/dawsonj/img/icon.png">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
