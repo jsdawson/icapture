@@ -73,20 +73,20 @@
                   vote_count
                 )
               VALUES (
-                #movie.id#,
-                '#movie.adult#',
-                '#movie.backdrop_path#',
-                '#SerializeJSON(movie.genre_ids)#',
-                '#movie.original_language#',
-                '#movie.original_title#',
-                '#movie.overview#',
-                #movie.popularity#,
-                '#movie.poster_path#',
-                '#movie.release_date#',
-                '#movie.title#',
-                '#movie.video#',
-                #movie.vote_average#,
-                #movie.vote_count#
+                <cfqueryparam value="#movie.id#" cfsqltype="cf_sql_integer">,
+                <cfqueryparam value="#movie.adult#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#movie.backdrop_path#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#SerializeJSON(movie.genre_ids)#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#movie.original_language#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#movie.original_title#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#movie.overview#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#movie.popularity#" cfsqltype="cf_sql_decimal">,
+                <cfqueryparam value="#movie.poster_path#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#movie.release_date#" cfsqltype="cf_sql_date">,
+                <cfqueryparam value="#movie.title#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#movie.video#" cfsqltype="cf_sql_nvarchar">,
+                <cfqueryparam value="#movie.vote_average#" cfsqltype="cf_sql_decimal">,
+                <cfqueryparam value="#movie.vote_count#" cfsqltype="cf_sql_integer">
               );
             </cfquery>
 

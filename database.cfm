@@ -44,7 +44,7 @@
               `backdrop_path` varchar(100) DEFAULT NULL,
               `genre_ids` text,
               `original_language` varchar(20) DEFAULT NULL,
-              `original_title` varchar(100) DEFAULT NULL,
+              `original_title` varchar(100) CHARSET UTF8 DEFAULT NULL,
               `overview` text,
               `popularity` decimal(10,6) DEFAULT NULL,
               `poster_path` varchar(100) DEFAULT NULL,
