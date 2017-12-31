@@ -42,8 +42,8 @@ var movieApp = movieApp || (function(window, $) {
               <p><strong>Original Title:</strong> <%= columns[5] %></p> \
               <p><strong>Original Language:</strong> <%= columns[4] %></p> \
               <p><strong>Popularity:</strong> <%= columns[7] %></p> \
-              <p><strong>Votes:</strong> <%= columns[12] %></p> \
-              <p><strong>Average Vote:</strong> <%= columns[13] %></p> \
+              <p><strong>Votes:</strong> <%= columns[13] %></p> \
+              <p><strong>Average Vote:</strong> <%= columns[12] %></p> \
               <p> \
                 <strong>Video:</strong> \
                 <span class="initial-caps"><%= columns[11] %></span> \
@@ -213,7 +213,7 @@ var movieApp = movieApp || (function(window, $) {
     var sortClass = 'fa-sort-' + _sortOrder.toLowerCase();
 
     $('#movies thead i.fa-sort').removeClass('fa-sort-asc fa-sort-desc');
-    
+
     $('#movies thead a[data-col="' + _sortCol + '"]').next('i.fa-sort').addClass(sortClass);
   }
 
