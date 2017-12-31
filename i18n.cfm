@@ -32,19 +32,16 @@
           <h1>My Movie Database</h1>
         </header>
 
-        <cfset page = 2>
+        <cfquery name="dbVerify" datasource="#datasource#">
+          SELECT
+            *
+          FROM
+            movies
+          WHERE
+            id = 276624;
+        </cfquery>
 
-        <cfset apiUrl = apiBaseUrl & "/3/discover/movie" & apiKey & "&language=en-US&sort_by=popularity.desc&certification=R&include_adult=false&include_video=false&page=3&primary_release_year=2015&with_genres=878">
-
-        <cfhttp
-          url="#apiUrl#"
-          method="get"
-          result="apiResult">
-        </cfhttp>
-
-        <cfset json = DeserializeJSON(apiResult.filecontent)>
-
-        <cfdump var="#json#">
+        <cfdump var="#dbVerify#">
 
       </div>
 

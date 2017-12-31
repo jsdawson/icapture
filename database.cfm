@@ -32,8 +32,12 @@
           <h1>My Movie Database</h1>
         </header>
 
+        <cfquery name="dbDrop" datasource="#datasource#">
+          DROP TABLE movies;
+        </cfquery>
+
         <cfquery name="dbCreate" datasource="#datasource#">
-          CREATE TABLE IF NOT EXISTS
+          CREATE TABLE
             `movies` (
               `id` int(11) NOT NULL PRIMARY KEY,
               `adult` varchar(10) DEFAULT NULL,
@@ -49,7 +53,7 @@
               `video` varchar(10) DEFAULT NULL,
               `vote_average` decimal(4,2) DEFAULT NULL,
               `vote_count` int(11) DEFAULT NULL
-            )
+            ) CHARACTER SET=utf8;
         </cfquery>
 
         <cfquery name="dbInsert" datasource="#datasource#">

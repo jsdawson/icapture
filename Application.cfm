@@ -3,7 +3,9 @@
 <cfapplication name="iCapture_JDawson" 
   clientmanagement="No" 
   clientstorage="iCapture" 
-  sessionmanagement="No"> 
+  sessionmanagement="No">
+
+<cfcontent type="text/html; charset=utf-8">
 
 <!--- Set page processing attributes. ---> 
 <cfsetting showDebugOutput="Yes"> 
