@@ -22,6 +22,14 @@ h1, h2, h3 {
   padding-bottom: 50px;
 }
 
+.initial-caps {
+  display: inline-block;
+  text-transform: lowercase;
+}
+  .initial-caps:first-letter {
+    text-transform: uppercase;
+  }
+
 body > footer {
   height: 50px;
   margin-top: -50px;

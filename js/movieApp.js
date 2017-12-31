@@ -44,8 +44,14 @@ var movieApp = movieApp || (function(window, $) {
               <p><strong>Popularity:</strong> <%= columns[7] %></p> \
               <p><strong>Votes:</strong> <%= columns[12] %></p> \
               <p><strong>Average Vote:</strong> <%= columns[13] %></p> \
-              <p><strong>Video:</strong> <%= columns[11] %></p> \
-              <p><strong>Adult:</strong> <%= columns[1] %></p> \
+              <p> \
+                <strong>Video:</strong> \
+                <span class="initial-caps"><%= columns[11] %></span> \
+              </p> \
+              <p> \
+                <strong>Adult:</strong> \
+                <span class="initial-caps"><%= columns[1] %></span> \
+              </p> \
             </div> \
           </div> \
           <div class="modal-footer"> \
