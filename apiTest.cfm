@@ -21,6 +21,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body>
     <div class="content">
@@ -50,7 +51,7 @@
     </div>
     <footer>
 
-      <small>Copyright &copy; <time datetime="2017">2017</time></small>
+      <small>Copyright &copy; <time id="crYear" datetime="2017">2017</time></small>
 
     </footer>
   </body>
